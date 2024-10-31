@@ -1,11 +1,23 @@
 <?php
-session_start();
-
-if (isset($_SESSION['username'])) {
-    echo"bem vindo, ".$_SESSION['username']. "!";
+class Animal{
+    public function fazerSom(){
+        echo "Barulho Genérico<br>";
+    }
 }
-else{
-    header('location: login.php');
+class Cachorro extends Animal{
+    public function fazerSom(){
+        echo "Auau<br>";
+    }
+}
+class Gato extends Animal{
+    public function fazerSom(){
+        echo "Miau";
+    }
 }
 
+$dog = new Cachorro();
+$dog->fazerSom();
+
+$cat = new Gato();
+$cat->fazerSom();
 ?>
